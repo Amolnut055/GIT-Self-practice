@@ -1,0 +1,63 @@
+*ให้chatgpt ช่วยจัดการคำและอธิบายเพิ่มเล็กน้อย*
+// Array
+- Data sturcture ที่เรียงข้อมูลหลายๆตัว ไว้ในตัวแปรเดียว สามารถเข้าถึงได้ผ่านตัว index
+
+// 1. create array with many data type
+    let arr = [true,1,"Beam",2,false,"Hello world"] 
+- ได้รู้ว่า array สามารถเก็บค่าหลายชนิดในตัวเดียวได้
+
+// 2. print array size
+    console.log(arr.length) 
+- .length ใช้นับจำนวนสมาชิกใน arr
+
+// 3. fist item
+    console.log(arr[0])
+- เรียกสมาชิกตัวแรกของ arr
+
+// 4. last item
+    console.log(arr.length-1)
+- ใช้เรียก index สุดท้ายของ arr
+
+//  5. add 2 more item at the end of array with obj and array data types respectively
+    arr.push({abc:1,pan:6})
+    console.log (arr)
+- .push ใช้เพื่อเพิ่ม object เข้าไปใน arr และเพิ่มเข้าไปในตำแหนงสุดท้าย
+
+// 6. print every item in the array
+    for (i=0;i<arr.length;i++){
+    console.log(arr[i])
+    }
+- ใช้for loop เพื่อให้แสดงสมาชิกทุกตัวใน array ออกมาทีละตัว
+
+// 7. shrink array with any operation  
+    arr.pop()
+console.log(arr)
+- .pop ใช้เพื่อลบสมาชิกตัวท้ายออก
+
+- ** spread แยกออก,กระจาย , rest รวมเข้า **
+
+8. apply spread on string variable
+let str="hello world" 
+const strCh=[...str] //เปลี่ยนstr เป้น arr
+console.log(strCh)
+
+9. create array with new constructor
+const arr1=new Array()
+console.log(arr1)
+const arr2=new Array(5)
+console.log(arr2)
+const arr3=new Array(1, "AB", true)
+console.log(arr3)
+const arr4=Array.of(10)  // create array with item 10
+console.log(arr4)
+const arr5=Array.from(arr4) // copy arr4
+console.log(arr5)
+const str2=Array.from(str) // เอาตัวแปรจากบบรทัดที่23
+console.log(str2)
+
+const [,,a,,...b]=[5,10,15,20,25]
+console.log(a) 
+console.log(typeof(a)) //number
+console.log(b) 
+console.log(typeof(b)) // object (array)
+

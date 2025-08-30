@@ -1,0 +1,75 @@
+Write a function getFreqOfWords(sentence) that returns an object with keys representing unique words 
+in lowercase and values representing the frequency of occurrences of each word with ignore case in the 
+sentence. If the input string is null or undefined, return undefined. 
+
+function getFreqOfWords(sentence) {
+    if (sentence === null || sentence === undefined || typeof sentence !== 'string') 
+        return undefined
+    const words = sentence.toLowerCase().split(" ")
+    let freq = {}
+    for (let i = 0; i < words.length; i++) {
+        let arrword = words[i];
+        if (freq[arrword]) {
+             freq[arrword]++   // ถ้ามีคำนี้แล้วให้บวกเพิ่ม
+        }
+        else {
+            freq[arrword] = 1 // ถ้ายังไม่เคยเจอคำนี้ ให้เริ่มที่ 1
+        }
+    }
+    return freq
+}
+
+
+// write function 
+// 1. function declaration
+    function sum(a,b) {
+        return a+b
+    }
+    //sum(1,2)
+    const x = sum
+    console.log(x(1,2))
+- function declaration คือการประกาศfunctionแบบปกติ
+
+//2. function expreesion (arrow syntax) 
+    const sum2 = () => a+b
+*ถ้ามี{}ต้องใส่return*
+- arrow function คือการเขียนfunctionแบบสั้นหรือแบบย่อ
+
+//3. function expression (annonymousfunction declaration)
+    const sum3 = function () {
+        return a+b
+    }
+- function expression คือfunctionที่ไม่มีชื่อ 
+
+// เขียนfunctionที่รับfunctionมาเป็นparameter
+//1.
+    function Test01(x) {
+        return x(20) //การเรียกfunctinมาใช้โดยการใส่ค่าให้function
+    }
+    function Test02(x) {
+        return x + 50
+    }
+
+    console.log(Test01(Test02)); //70
+- Test01 รับ parameter x ซึ่ง x เป็น "function" 
+- Test01(Test02) หมายถึงส่ง Test02 ไปเป็น parameter
+- ภายใน Test01 จะreturn x(20) จริงๆ คือ Test02(20)
+- Test02(20) จะreturn 20 + 50 = 70
+
+//2.
+    function sum(a,b){
+        return a+b
+    }
+    function math (a){
+        return a *2
+    }
+    console.log(math(sum(2,3))) //ให้ค่ากับparameter
+
+
+    function test(x) {
+        return x
+    }
+    function test2(x) {
+        return x+50
+    }
+    console.log(test(test2)(10))

@@ -1,0 +1,114 @@
+// object
+- เป็นการเก็บค่า Data Structure ที่เก็บไว้ในรูป key-value pair
+   โดย Key เป็นชื่อที่ใช้ในการระบุและเข้าถึงค่าของ Property และ Value เป็นข้อมูลที่เก็บไว้ภายใต้ Key นั้นๆ โดยเป้นข้อมูลประเภทอะไรก้ได้
+
+// 1.create obj with literals
+        const Student = {
+        Fname: "Amolnut" ,
+        Lname: "Suksumek" ,
+        age: 19 ,
+        No: "055"
+    }
+    const {Fname, Lname} = Student
+- ใช้ Destructuring เพื่อทำให้แสดง FnamedกับLname  
+
+    console.log(Student);
+    console.log(Student.Fname)
+    console.log(Student['No']);
+    console.log(Fname, Lname)
+- keyไม่ควรซ้ำได้(ถ้าซ้ำจะเอาkeyล่าสุด) valueซ้ำด้วย
+
+// 2. สร้าง ซ้อน obj
+    const Person01 = {
+    name: "Beam",
+    student_id: {
+        id: '055'
+    }
+}
+console.log(Person01)
+- คือการสร้าง Nested Object หรือ obj ซ้อน obj
+
+// Constructor function
+- คือ function ที่ใช้สร้าง object หลายๆตัวโดยใช้ this ในการประกาศตัวแปรและ new ในการเรียกใช้ตัวแปร
+
+// 3.create constructor function
+    function User(Name, Age) {
+        this.Name = Name;
+            this.Age = Age;
+    }
+     User.prototype.getInfo = function() {
+      return this.Name + " age= " + this.Age
+     }
+- เพิ่ม method ผ่าน prototype เพื่อให้ทุก object ใช้ร่วมกันได้
+     const people01 = new User("Beam", 19)
+     const people02 = new User("CP", 20)
+    console.log(people01.getInfo())
+
+
+//ES6 class
+- เป็นการเขียนโค้ดที่เกี่ยวข้องกับ OOP (Object-Oriented Programming) เพื่อให้ดูอ่านง่าย
+// 4.create class
+    class Persons {
+        constructor(name) {
+           this.name = name
+        }
+
+        getName() {
+          return this.name
+        }
+    }
+    let newPerson = new Persons("Amolnut")
+    console.log(newPerson);
+
+// 5.create object.create()
+- คือการสร้าง object ที่มี prototype เชื่อมโยงกับ object ที่เรากำหนดเอง
+    let Car = { engine: true, oil: 100, cooling: 100 };
+    let car01 = Object.create(Car);
+    let car02 = Object.create(Car);
+    car01.engine = false;
+    car01.oil = 0
+    car01.cooling = 0
+    car02.engine = null;
+    car02.oil = "emtry"
+    car02.cooling = "emtry"
+    console.log(Car);
+    console.log(car01)
+    console.log(car02)
+
+- for in กับ obj (for...in ใช้วน property ของ object)
+- for of กับ array (for...of ใช้กับ iterable เช่น array)
+
+// 6.create loop in obj 
+- ใช้ Object.keys กับ for...of เพื่อวนค่าของ object
+    const studnet = {
+        name: "Beam",
+     age: 19
+    }
+    for (const values of Object.keys(studnet)) {
+        console.log(studnet[values])
+    }
+
+- for in กับ obj (for...in ใช้วน property ของ object)
+- for of กับ array (for...of ใช้กับ iterable เช่น array)
+
+
+// equal
+// 7. create function for check id and casesensitive
+- การเขียน function เพื่อเช็คว่า id ตรงกันมั้ยและ name ต้องเหมือนกันโดยไม่สนใจตัวเล็กหรือตัวใหญ่
+    const studnet1 = {id:1,name:"Beam"}
+    const studnet2 = {id:1,name:"Beam"}
+    const student3 = studnet1;
+    function Std(std1, std2) {
+        if (
+         std1.id === std2.id &&
+         std1.name.toLowerCase() === std2.name.toLowerCase()
+        )
+           return true
+     else return false
+    }
+    const isEqaulStd = Std(studnet1, studnet2)
+    console.log(isEqaulStd) 
+    console.log(studnet1 === studnet2);
+- false เพราะอยู่คนละที่อยู่ใน memory
+    console.log(studnet1 === student3);
+- true เพราะอ้างถึง object เดียวกัน
