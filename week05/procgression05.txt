@@ -1,0 +1,10 @@
+สิ่งที่ได้เรียนรู้ใหม่ ในweek5
+- JS Module คือการแบ่ง code ออกจากfileย่อยทำให้เรียกกลับมาใช้ได้งานเรื่อยๆ
+- CommonJS ใช้ใน Node.js มีการใช้ require() เพื่อดึง module
+- ES Module ใช้ได้ทั้ง Browser และใน Node.js
+ได้ทบทวนการใช้
+- .filter และ .map ใช้เลือกและแปลงค่าใน array
+- Array.isArray()  ใช้ในการตรวจสอบว่าเป็น array
+- .concat และ spread ...  ใช้รวมในการรวม array
+- .toString และ .join  ใช้ในการแปลง array เป็น string
+- .sort  ใช้ในการเรียงลำดับตัวเลขหรือตาม property
